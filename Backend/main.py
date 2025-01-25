@@ -43,13 +43,14 @@ def calculate_accuracy(mse, max_mse):
     return accuracy
 
 # Function to analyze moves using the webcam
-def analyze_moves(reference_poses):
+def analyze_moves(reference_poses, selected_move):
     cap = cv2.VideoCapture(0)
     print("Camera activated. Waiting for your moves...")
 
     # Randomly select a move
-    move_names = list(reference_poses.keys())
-    selected_move = random.choice(move_names)
+ #   move_names = list(reference_poses.keys())
+  #  selected_move = random.choice(move_names)
+
     print(f"Perform the move: {selected_move.upper()}")
     engine.say(f"Perform the move: {selected_move}")
     engine.runAndWait()
@@ -132,4 +133,7 @@ if __name__ == "__main__":
             exit(1)
 
 
-    analyze_moves(reference_poses)
+    print("Available moves:", ", ".join(reference_images.keys()))
+    user_selected_move = input("Enter the move you want to perform: ").strip().lower()
+
+    analyze_moves(reference_poses, user_selected_move)
