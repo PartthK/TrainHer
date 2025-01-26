@@ -3,7 +3,6 @@ import mediapipe as mp
 import pyttsx3
 import numpy as np
 from sklearn.metrics import mean_squared_error
-import random
 
 # Initialize MediaPipe Pose
 mp_pose = mp.solutions.pose
@@ -47,10 +46,6 @@ def analyze_moves(reference_poses, selected_move):
     cap = cv2.VideoCapture(0)
     print("Camera activated. Waiting for your moves...")
 
-    # Randomly select a move
- #   move_names = list(reference_poses.keys())
-  #  selected_move = random.choice(move_names)
-
     print(f"Perform the move: {selected_move.upper()}")
     engine.say(f"Perform the move: {selected_move}")
     engine.runAndWait()
@@ -92,10 +87,23 @@ def analyze_moves(reference_poses, selected_move):
             # Calculate accuracy percentage
             accuracy = calculate_accuracy(mse, max_mse)
 
-            if accuracy > 80:  # Example threshold for "good" accuracy
-                feedback = f"Great job! Your {selected_move} move accuracy is {accuracy:.2f}%."
+            if accuracy > 90:  # Threshold for "good" accuracy
+                feedback = f"Great job! Your {selected_move} move accuracy is {accuracy:.2f}%!"
+                cv2.putText(frame, feedback, (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+                print(feedback)
+
+                cap.release()
+                cv2.destroyAllWindows()
+
+                # Ask the user if they want to continue
+                user_response = input("Do you want to move on to the next pose? (yes/no): ").strip().lower()
+                if user_response == "yes":
+                    return True
+                else:
+                    return False
+
             else:
-                feedback = f"Keep practicing! Your {selected_move} move accuracy is {accuracy:.2f}%."
+                feedback = f"Keep practicing! Your {selected_move} move accuracy is {accuracy:.2f}%!"
 
             # Display feedback on screen
             cv2.putText(frame, feedback, (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
@@ -111,6 +119,7 @@ def analyze_moves(reference_poses, selected_move):
 
     cap.release()
     cv2.destroyAllWindows()
+    return False
 
 # Main Function
 if __name__ == "__main__":
@@ -132,8 +141,17 @@ if __name__ == "__main__":
             print(f"Failed to load pose for {move}. Exiting.")
             exit(1)
 
+    while True:
+        print("Available moves:", ", ".join(reference_images.keys()))
+        user_selected_move = input("Enter the move you want to perform: ").strip().lower()
 
-    print("Available moves:", ", ".join(reference_images.keys()))
-    user_selected_move = input("Enter the move you want to perform: ").strip().lower()
+        if user_selected_move not in reference_images:
+            print("Invalid move. Please try again.")
+            continue
 
-    analyze_moves(reference_poses, user_selected_move)
+        # Run pose analysis
+        next_pose = analyze_moves(reference_poses, user_selected_move)
+
+        if not next_pose:
+            print("Thank you for practicing! Goodbye!")
+            break
