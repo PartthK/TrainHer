@@ -96,7 +96,7 @@ export function Profile() {
                     position: "fixed",
                     top: "0",
                     zIndex: "1000",
-                    width: "100%", // Adjust to span the full width of the page
+                    width: "1100px", // Adjust to span the full width of the page
                     boxSizing: "border-box",
                 }}
             >
@@ -171,20 +171,23 @@ export function Profile() {
                     gridTemplateColumns: "1fr 3fr",
                     height: "100vh",
                     gap: "20px",
+                    marginTop: "100px",
                     paddingTop: "70px", // To account for the fixed navigation bar
                 }}
             >
                 {/* Header */}
-                <header
+                {/* <header
                     style={{
                         gridColumn: "1 / -1",
                         padding: "20px",
                         backgroundColor: "#e9ecef",
                         textAlign: "center",
+                        marginLeft: "135px",
+                        width: "1060px"
                     }}
                 >
                     <h1 style={{ fontSize: "36px", fontWeight: "bold", margin: 0 }}>My Profile</h1>
-                </header>
+                </header> */}
 
                 {/* Main Content */}
                 <main
@@ -222,7 +225,7 @@ export function Profile() {
                             Cookie Kulkarni
                         </h2>
                         <p style={{ fontSize: "16px", textAlign: "center", color: "#666" }}>
-                            contact@accuyoga.co
+                            contact@trainHer.co
                         </p>
                     </div>
 
@@ -313,17 +316,19 @@ export function Profile() {
                 </main>
 
                 {/* Footer */}
-                <footer
+                {/* <footer
                     style={{
                         gridColumn: "1 / -1",
                         textAlign: "center",
+                        marginTop: "80px",
                         padding: "20px",
+      
                         backgroundColor: "#e9ecef",
                         borderTop: "2px solid #ddd",
                     }}
                 >
-                    <p style={{ fontSize: "14px", color: "#666" }}>© 2025 AccuYoga</p>
-                </footer>
+                    <p style={{ fontSize: "14px", color: "#666" }}>© 2025 AccuYoga</p> */}
+                {/* </footer> */}
             </div>
         </>
     );

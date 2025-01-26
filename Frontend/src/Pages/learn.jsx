@@ -20,23 +20,23 @@ export const Box = ({ title, image, onPlayClick }) => {
                 backgroundColor: "#f0f8ff",
                 borderRadius: "15px", // Increased from 10px
                 boxShadow: "0 3px 15px rgba(0, 0, 0, 0.15)", // Increased shadow size
-                width: "1000px", // Increased by 1.5x
-                padding: "30px", // Increased by 1.5x
-                gap: "30px", // Increased by 1.5x
+                width: "900px", // Adjusted width
+                padding: "30px", // Adjusted padding
+                gap: "20px", // Adjusted gap
             }}
         >
-            <div style={{ flex: "1", marginRight: "750px" }}>
-                <h3 style={{ margin: "0 0 15px 0", fontSize: "27px" }}>{title}</h3>
+            <div style={{ flex: "1" }}>
+                <h3 style={{ margin: "0 0 15px 0", fontSize: "24px" }}>{title}</h3>
                 <button
                     onClick={onPlayClick}
                     style={{
                         backgroundColor: "#007bff",
                         color: "white",
                         border: "none",
-                        padding: "15px 30px", // Increased by 1.5x
-                        borderRadius: "7.5px",
+                        padding: "10px 20px", // Adjusted padding
+                        borderRadius: "10px", // Adjusted border radius
                         cursor: "pointer",
-                        fontSize: "18px",
+                        fontSize: "16px", // Adjusted font size
                     }}
                 >
                     Play
@@ -46,8 +46,8 @@ export const Box = ({ title, image, onPlayClick }) => {
                 src={image}
                 alt={title}
                 style={{
-                    width: "150px", // Increased by 1.5x
-                    height: "150px",
+                    width: "100px",
+                    height: "100px",
                     objectFit: "cover",
                     borderRadius: "50%",
                 }}
@@ -81,10 +81,10 @@ export function Learn() {
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
-                    padding: "22.5px 60px",
+                    padding: "15px 40px", // Adjusted padding
                     backgroundColor: "#ffffff",
-                    boxShadow: "0 3px 15px rgba(0, 0, 0, 0.15)",
-                    width: "1650px", // Increased by 1.5x
+                    boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)", // Lighter shadow for elegance
+                    width: "1100px", // Full width
                     position: "fixed",
                     top: "0",
                     zIndex: "1000",
@@ -93,7 +93,7 @@ export function Learn() {
             >
                 <h2
                     style={{
-                        fontSize: "36px",
+                        fontSize: "24px",
                         margin: "0",
                         color: "#1a202c",
                         flexShrink: "0",
@@ -104,7 +104,7 @@ export function Learn() {
                 <div
                     style={{
                         display: "flex",
-                        gap: "30px",
+                        gap: "20px", // Adjusted gap for better spacing
                         flexWrap: "nowrap",
                     }}
                 >
@@ -112,9 +112,9 @@ export function Learn() {
                         to="/"
                         style={{
                             textDecoration: "none",
-                            fontSize: "27px",
+                            fontSize: "18px",
                             color: "#1a202c",
-                            padding: "7.5px 22.5px",
+                            padding: "5px 15px",
                         }}
                     >
                         Home
@@ -123,9 +123,9 @@ export function Learn() {
                         to="/Learn"
                         style={{
                             textDecoration: "none",
-                            fontSize: "27px",
+                            fontSize: "18px",
                             color: "#1a202c",
-                            padding: "7.5px 22.5px",
+                            padding: "5px 15px",
                         }}
                     >
                         Learn
@@ -134,9 +134,9 @@ export function Learn() {
                         to="/Profile"
                         style={{
                             textDecoration: "none",
-                            fontSize: "27px",
+                            fontSize: "18px",
                             color: "#1a202c",
-                            padding: "7.5px 22.5px",
+                            padding: "5px 15px",
                         }}
                     >
                         Profile
@@ -145,9 +145,9 @@ export function Learn() {
                         to="/Summary"
                         style={{
                             textDecoration: "none",
-                            fontSize: "27px",
+                            fontSize: "18px",
                             color: "#1a202c",
-                            padding: "7.5px 22.5px",
+                            padding: "5px 15px",
                         }}
                     >
                         Summary
@@ -158,14 +158,14 @@ export function Learn() {
             {/* Content Section */}
             <div
                 style={{
-                    marginTop: "200px", // Increased margin to account for navbar and spacing
+                    marginTop: "100px", // Increased margin to account for navbar and spacing
                     backgroundColor: "#FFFFFF",
                     minHeight: "100vh",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    gap: "30px",
+                    gap: "20px", // Adjusted gap
                 }}
             >
                 <Box
