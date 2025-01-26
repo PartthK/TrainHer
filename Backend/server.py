@@ -12,7 +12,9 @@ def analyze():
 
     # Write the move to a text file
     with open("move.txt", "w") as file:
+        print("Writing to move.txt...")
         file.write(move)
+        print("Finished writing to move.txt.")
     
     # Return a response to the front-end (optional)
     return "Move written to file", 200
