@@ -64,7 +64,7 @@ export function Learn() {
             .post("http://localhost:5000/analyze", { move }) // Send the move to the server
             .then((response) => {
                 console.log("Server response:", response.data);
-                alert(`Move sent: ${move}`); // Show success message
+                //alert(`Move sent: ${move}`); // Show success message
             })
             .catch((error) => {
                 console.error("Error sending data to the server:", error);
