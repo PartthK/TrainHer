@@ -1,20 +1,21 @@
 import React from "react";
 import { Box } from "../Components/box";
-import axios from "axios";
+import axios from "axios"; // Import axios for API requests
 import punchImage from "../Images/punch.png";
 import kickImage from "../Images/kick.png";
 
 export function Learn() {
-    const handleAnalyze = (move) => {
-        axios
-            .post("http://localhost:5000/analyze", { move })
-            .then((response) => {
-                console.log(response.data); // Handle success response
-                alert(`Move: ${move} - Accuracy: ${response.data.accuracy}%`);
-            })
-            .catch((error) => {
-                console.error("Error analyzing move:", error);
-            });
+    const sendMoveToServer = (move) => {
+        console.log("RAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+        axios.post("http://localhost:5000/analyze", { move }) // Send the move to the server
+            // .then((response) => {
+            //     console.log("Server response:", response.data);
+            //     alert(response.data.status); // Show the response message
+            // })
+            // .catch((error) => {
+            //     console.error("Error sending data to the server:", error);
+            //     alert("Failed to connect to the server.");
+            // });
     };
 
     return (
@@ -32,14 +33,14 @@ export function Learn() {
             <Box
                 title="Punch"
                 image={punchImage}
-                onPlayClick={() => handleAnalyze("punch")}
+                onPlayClick={() => sendMoveToServer("punch")}
                 width="1000px"
                 height="200px"
             />
             <Box
                 title="Kick"
                 image={kickImage}
-                onPlayClick={() => handleAnalyze("kick")}
+                onPlayClick={() => sendMoveToServer("kick")}
                 width="1000px"
                 height="200px"
             />

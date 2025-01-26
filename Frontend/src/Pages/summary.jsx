@@ -10,12 +10,10 @@ export function Summary() {
                 padding: "40px",
                 boxSizing: "border-box",
             }}
-        >
-            {/* Header */}
-            <header style={{ marginBottom: "30px", textAlign: "left" }}>
-                <h1 style={{ fontSize: "36px", fontWeight: "bold" }}>Summary</h1>
-            </header>
 
+        >
+            
+            
             {/* Main Content */}
             <main>
                 <div
