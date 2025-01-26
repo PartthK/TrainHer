@@ -26,7 +26,7 @@ def monitor_file(file_path="move.txt"):
                     try:
                         # Execute main.py and pass the detected move as an argument
                         subprocess.run(
-                            ["python", "main.py", move], check=True
+                            ["python3", "main.py", move], check=True
                         )
                     except subprocess.CalledProcessError as e:
                         print(f"Error while executing main.py: {e}")
