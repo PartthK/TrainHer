@@ -25,7 +25,7 @@ export const Box = ({ title, image, onPlayClick }) => {
                 gap: "20px", // Adjusted gap
             }}
         >
-            <div style={{ flex: "1" }}>
+            <div style={{ flex: "1", marginRight:"500px"}}>
                 <h3 style={{ margin: "0 0 15px 0", fontSize: "24px" }}>{title}</h3>
                 <button
                     onClick={onPlayClick}
@@ -171,6 +171,7 @@ export function Learn() {
                 <Box
                     title="Punch"
                     image={punchImage}
+
                     onPlayClick={() => sendMoveToServer("punch")}
                 />
                 <Box
