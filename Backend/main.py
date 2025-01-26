@@ -135,9 +135,9 @@ if __name__ == "__main__":
     reference_images = {
         "punch": "punch_pose.jpg",
         "kick": "kick_pose.jpg",
-        "upper block": "upper_block_pose.jpg",
-        "middle block": "middle_block_pose.webp",
-        "downward block": "downward_block_pose.webp",
+        "upper_block": "upper_block_pose.jpg",
+        "middle_block": "middle_block_pose.webp",
+        "downward_block": "downward_block_pose.webp",
     }
 
     reference_poses = {}
