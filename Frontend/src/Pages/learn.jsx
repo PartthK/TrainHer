@@ -18,24 +18,25 @@ export const Box = ({ title, image, onPlayClick }) => {
                 justifyContent: "space-between",
                 alignItems: "center",
                 backgroundColor: "#f0f8ff",
-                borderRadius: "10px",
-                boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-                width: "1050px",
-                padding: "20px",
-                gap: "20px",
+                borderRadius: "15px", // Increased from 10px
+                boxShadow: "0 3px 15px rgba(0, 0, 0, 0.15)", // Increased shadow size
+                width: "1000px", // Increased by 1.5x
+                padding: "30px", // Increased by 1.5x
+                gap: "30px", // Increased by 1.5x
             }}
         >
-            <div style={{ flex: "1", marginRight: "500px"}}>
-                <h3 style={{ margin: "0 0 10px 0" }}>{title}</h3>
+            <div style={{ flex: "1", marginRight: "750px" }}>
+                <h3 style={{ margin: "0 0 15px 0", fontSize: "27px" }}>{title}</h3>
                 <button
                     onClick={onPlayClick}
                     style={{
                         backgroundColor: "#007bff",
                         color: "white",
                         border: "none",
-                        padding: "10px 20px",
-                        borderRadius: "5px",
+                        padding: "15px 30px", // Increased by 1.5x
+                        borderRadius: "7.5px",
                         cursor: "pointer",
+                        fontSize: "18px",
                     }}
                 >
                     Play
@@ -45,8 +46,8 @@ export const Box = ({ title, image, onPlayClick }) => {
                 src={image}
                 alt={title}
                 style={{
-                    width: "100px",
-                    height: "100px",
+                    width: "150px", // Increased by 1.5x
+                    height: "150px",
                     objectFit: "cover",
                     borderRadius: "50%",
                 }}
@@ -80,10 +81,10 @@ export function Learn() {
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
-                    padding: "15px 40px",
+                    padding: "22.5px 60px",
                     backgroundColor: "#ffffff",
-                    boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-                    width: "1100px", // Adjusted for uniform margins
+                    boxShadow: "0 3px 15px rgba(0, 0, 0, 0.15)",
+                    width: "1650px", // Increased by 1.5x
                     position: "fixed",
                     top: "0",
                     zIndex: "1000",
@@ -92,7 +93,7 @@ export function Learn() {
             >
                 <h2
                     style={{
-                        fontSize: "24px",
+                        fontSize: "36px",
                         margin: "0",
                         color: "#1a202c",
                         flexShrink: "0",
@@ -103,7 +104,7 @@ export function Learn() {
                 <div
                     style={{
                         display: "flex",
-                        gap: "20px",
+                        gap: "30px",
                         flexWrap: "nowrap",
                     }}
                 >
@@ -111,9 +112,9 @@ export function Learn() {
                         to="/"
                         style={{
                             textDecoration: "none",
-                            fontSize: "18px",
+                            fontSize: "27px",
                             color: "#1a202c",
-                            padding: "5px 15px",
+                            padding: "7.5px 22.5px",
                         }}
                     >
                         Home
@@ -122,9 +123,9 @@ export function Learn() {
                         to="/Learn"
                         style={{
                             textDecoration: "none",
-                            fontSize: "18px",
+                            fontSize: "27px",
                             color: "#1a202c",
-                            padding: "5px 15px",
+                            padding: "7.5px 22.5px",
                         }}
                     >
                         Learn
@@ -133,9 +134,9 @@ export function Learn() {
                         to="/Profile"
                         style={{
                             textDecoration: "none",
-                            fontSize: "18px",
+                            fontSize: "27px",
                             color: "#1a202c",
-                            padding: "5px 15px",
+                            padding: "7.5px 22.5px",
                         }}
                     >
                         Profile
@@ -144,9 +145,9 @@ export function Learn() {
                         to="/Summary"
                         style={{
                             textDecoration: "none",
-                            fontSize: "18px",
+                            fontSize: "27px",
                             color: "#1a202c",
-                            padding: "5px 15px",
+                            padding: "7.5px 22.5px",
                         }}
                     >
                         Summary
@@ -157,14 +158,14 @@ export function Learn() {
             {/* Content Section */}
             <div
                 style={{
-                    marginTop: "120px", // Account for the fixed navbar height
+                    marginTop: "200px", // Increased margin to account for navbar and spacing
                     backgroundColor: "#FFFFFF",
                     minHeight: "100vh",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    gap: "20px",
+                    gap: "30px",
                 }}
             >
                 <Box
@@ -189,7 +190,7 @@ export function Learn() {
                 />
                 <Box
                     title="Lower Block"
-                    image={lowerBlock}
+                    image={middleBlock}
                     onPlayClick={() => sendMoveToServer("lower_block")}
                 />
             </div>
