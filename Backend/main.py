@@ -145,6 +145,8 @@ if __name__ == "__main__":
         print("Available moves:", ", ".join(reference_images.keys()))
         user_selected_move = input("Enter the move you want to perform: ").strip().lower()
 
+        # wait async functions for a different file
+
         if user_selected_move not in reference_images:
             print("Invalid move. Please try again.")
             continue
