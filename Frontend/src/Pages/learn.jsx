@@ -190,7 +190,7 @@ export function Learn() {
                 />
                 <Box
                     title="Lower Block"
-                    image={middleBlock}
+                    image={lowerBlock}
                     onPlayClick={() => sendMoveToServer("lower_block")}
                 />
             </div>
